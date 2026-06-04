@@ -1,4 +1,4 @@
-// --- DYNAMIC INTERACTIVE LOGIC FOR DREAMYSTROKES ---
+// --- DYNAMIC INTERACTIVE LOGIC FOR REVERIEOFTANVI ---
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -505,7 +505,7 @@ Please let me know how we can proceed!`;
       // API request body for Brevo Transactional Email
       const requestData = {
         sender: {
-          name: "dreamystrokes Portfolio",
+          name: "ReverieOfTanvi Portfolio",
           email: "25ai056@sxca.edu.in"
         },
         to: [
