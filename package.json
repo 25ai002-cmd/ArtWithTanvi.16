@@ -1,0 +1,10 @@
+{
+  "name": "art-with-tanvi",
+  "version": "1.0.0",
+  "description": "Portfolio website served via Node.js Web Service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}
