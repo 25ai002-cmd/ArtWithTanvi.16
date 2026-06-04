@@ -674,6 +674,24 @@
                       style="width: 100%; padding: 0.9rem; border-radius: var(--radius-sm); background: rgba(8, 12, 9, 0.6); border: 1px solid var(--border-light); color: var(--text-primary); font-family: inherit; outline: none; resize: vertical; transition: var(--transition-fast);"></textarea>
           </div>
 
+          <!-- Reference Image Upload -->
+          <div class="control-group">
+            <label class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Attach Reference Image (Optional)</label>
+            <div class="upload-zone" id="upload-zone" style="border: 1px dashed var(--border-accent); padding: 1.5rem; border-radius: var(--radius-sm); text-align: center; background: rgba(8, 12, 9, 0.4); cursor: pointer; transition: var(--transition-fast); position: relative;">
+              <input type="file" id="contact-file" accept="image/*" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+              <div id="upload-prompt">
+                <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: var(--color-sage); margin-bottom: 0.5rem; display: block;"></i>
+                <span style="font-size: 0.85rem; color: var(--text-secondary);">Drag & drop or <span style="color: var(--color-sage); font-weight: 500;">browse</span> to upload reference painting</span>
+                <span style="display: block; font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem;">Supports JPG, PNG (Max 5MB)</span>
+              </div>
+              <div id="upload-preview-container" style="display: none; align-items: center; justify-content: center; gap: 1rem; flex-direction: column;">
+                <img id="upload-preview-img" src="" alt="Preview" style="max-height: 80px; border-radius: 4px; border: 1px solid var(--border-accent); box-shadow: var(--shadow-sm);">
+                <span id="upload-file-name" style="font-size: 0.8rem; color: var(--text-primary); font-weight: 500;"></span>
+                <button type="button" id="remove-file-btn" class="btn btn-secondary" style="padding: 0.3rem 1rem; font-size: 0.75rem; border-radius: 20px;">Remove Image</button>
+              </div>
+            </div>
+          </div>
+
           <!-- Action Button -->
           <button type="submit" id="contact-submit-btn" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">
             <i class="far fa-envelope"></i> Send Commission Inquiry

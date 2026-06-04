@@ -447,6 +447,100 @@ Please let me know how we can proceed!`;
   const submitBtn = document.getElementById('contact-submit-btn');
   const statusMsg = document.getElementById('contact-status-msg');
 
+  // File Upload Elements
+  const fileInput = document.getElementById('contact-file');
+  const uploadZone = document.getElementById('upload-zone');
+  const uploadPrompt = document.getElementById('upload-prompt');
+  const previewContainer = document.getElementById('upload-preview-container');
+  const previewImg = document.getElementById('upload-preview-img');
+  const fileNameSpan = document.getElementById('upload-file-name');
+  const removeFileBtn = document.getElementById('remove-file-btn');
+  let base64FileData = null;
+  let uploadFileName = "";
+
+  if (fileInput && uploadZone) {
+    // Prevent default drag behaviors
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      uploadZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      }, false);
+    });
+
+    // Highlight drop zone when item is dragged over it
+    ['dragenter', 'dragover'].forEach(eventName => {
+      uploadZone.addEventListener(eventName, () => {
+        uploadZone.style.borderColor = 'var(--color-sage)';
+        uploadZone.style.backgroundColor = 'rgba(141, 168, 147, 0.05)';
+      }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      uploadZone.addEventListener(eventName, () => {
+        uploadZone.style.borderColor = 'var(--border-accent)';
+        uploadZone.style.backgroundColor = 'rgba(8, 12, 9, 0.4)';
+      }, false);
+    });
+
+    // Handle dropped files
+    uploadZone.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      if (files.length > 0) {
+        fileInput.files = files;
+        handleFileSelect(files[0]);
+      }
+    });
+
+    // Handle selected files via browser
+    fileInput.addEventListener('change', (e) => {
+      if (fileInput.files.length > 0) {
+        handleFileSelect(fileInput.files[0]);
+      }
+    });
+
+    function handleFileSelect(file) {
+      if (!file.type.startsWith('image/')) {
+        alert('Please upload an image file (PNG, JPG, JPEG).');
+        resetUploadZone();
+        return;
+      }
+
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Image size exceeds 5MB. Please upload a smaller image.');
+        resetUploadZone();
+        return;
+      }
+
+      uploadFileName = file.name;
+      fileNameSpan.textContent = file.name;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        base64FileData = e.target.result.split(',')[1];
+        previewImg.src = e.target.result;
+        uploadPrompt.style.display = 'none';
+        previewContainer.style.display = 'flex';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    removeFileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      resetUploadZone();
+    });
+
+    function resetUploadZone() {
+      fileInput.value = '';
+      base64FileData = null;
+      uploadFileName = "";
+      previewImg.src = '';
+      fileNameSpan.textContent = '';
+      uploadPrompt.style.display = 'block';
+      previewContainer.style.display = 'none';
+    }
+  }
+
   if (emailForm) {
     emailForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -522,6 +616,16 @@ Please let me know how we can proceed!`;
         htmlContent: htmlContent
       };
 
+      // Append attachment if client selected a file
+      if (base64FileData && uploadFileName) {
+        requestData.attachment = [
+          {
+            content: base64FileData,
+            name: uploadFileName
+          }
+        ];
+      }
+
       fetch('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
         headers: {
@@ -551,6 +655,16 @@ Please let me know how we can proceed!`;
           statusMsg.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your commission request has been sent successfully.';
         }
         emailForm.reset();
+        if (fileInput && uploadZone) {
+          // Reset file preview variables
+          fileInput.value = '';
+          base64FileData = null;
+          uploadFileName = "";
+          previewImg.src = '';
+          fileNameSpan.textContent = '';
+          uploadPrompt.style.display = 'block';
+          previewContainer.style.display = 'none';
+        }
       })
       .catch(error => {
         console.error('Error sending email via Brevo:', error);
