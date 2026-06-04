@@ -82,20 +82,44 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.style.borderBottom = '1px solid var(--border-light)';
         
         const navList = navMenu.querySelector('ul');
-        navList.style.flexDirection = 'column';
-        navList.style.alignItems = 'center';
-        navList.style.gap = '1.5rem';
+        if (navList) {
+          navList.style.flexDirection = 'column';
+          navList.style.alignItems = 'center';
+          navList.style.gap = '1.5rem';
+        }
       }
     });
     
     // Reset state on link click
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth <= 600) {
+        if (window.innerWidth <= 960) {
           navMenu.style.display = 'none';
           mobileToggle.classList.remove('active');
         }
       });
+    });
+
+    // Cleanup inline styles on window resize to prevent layout breaking
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 960) {
+        navMenu.style.display = '';
+        navMenu.style.position = '';
+        navMenu.style.top = '';
+        navMenu.style.left = '';
+        navMenu.style.width = '';
+        navMenu.style.background = '';
+        navMenu.style.padding = '';
+        navMenu.style.borderBottom = '';
+        
+        const navList = navMenu.querySelector('ul');
+        if (navList) {
+          navList.style.flexDirection = '';
+          navList.style.alignItems = '';
+          navList.style.gap = '';
+        }
+        mobileToggle.classList.remove('active');
+      }
     });
   }
 
