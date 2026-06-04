@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dreamystrokes✨️ | Tanvi - Sketching, Painting & Custom Frames</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Tanvi (artwithtanvi_.16) - Handcrafted drawings, starry canvas paintings, and custom house décor frames. Order custom commissions via Instagram DM.">
+  <meta name="keywords" content="artwithtanvi, dreamystrokes, sketching, canvas painting, custom home decor, custom frames, drawing commissions, botanical sketch">
+  <meta name="author" content="Tanvi">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="dreamystrokes✨️ | Tanvi - Fine Art & Custom Decor">
+  <meta property="og:description" content="Explore handcrafted drawings, canvas magic, and custom framed art commissions by Tanvi. Preview frames live in interactive rooms.">
+  <meta property="og:image" content="assets/hero_desk.png">
+  
+  <!-- FontAwesome for natural icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Backgrounds -->
+  <div class="ambient-glow-container">
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+    <div class="glow-blob blob-3"></div>
+    
+    <!-- Organic SVG floating leaves (Wind Breeze scenario) -->
+    <svg class="decor-leaf" style="top: 15%; left: 8%; width: 30px; height: 30px;" viewBox="0 0 24 24">
+      <path d="M17,8C8,10,5.9,16.17,5.09,19c3.1-2,6.91-1.37,9.91-2.37C18,15.63,22,12,22,8C22,3,18,2,17,8z M12,14.5c-1-0.5-2.24-0.12-3,0.5v-2c0.88-0.74,2-1,3-0.5V14.5z"/>
+    </svg>
+    <svg class="decor-leaf" style="top: 45%; right: 5%; width: 45px; height: 45px; animation-delay: 5s;" viewBox="0 0 24 24">
+      <path d="M17,8C8,10,5.9,16.17,5.09,19c3.1-2,6.91-1.37,9.91-2.37C18,15.63,22,12,22,8C22,3,18,2,17,8z"/>
+    </svg>
+    <svg class="decor-leaf" style="top: 75%; left: 12%; width: 25px; height: 25px; animation-delay: 10s;" viewBox="0 0 24 24">
+      <path d="M21,11C21,5.2,14.8,1,13,1C13,8.2,7,10.6,2,11.5c4.8,1.4,8.5,4.6,11,4.6C15.8,16.1,21,14.8,21,11z"/>
+    </svg>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="header">
+    <div class="container">
+      <a href="#home" class="logo-link">
+        <img src="assets/logo.png" alt="dreamystrokes logo" class="logo-img">
+        <span class="logo-text">
+          dreamystrokes✨️
+          <span class="logo-subtitle">Artist & Creator</span>
+        </span>
+      </a>
+      
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">Artist</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#previewer" class="nav-link">Live Preview</a></li>
+          <li><a href="#estimator" class="nav-link">Cost Estimator</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://www.instagram.com/artwithtanvi_.16/" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1.5rem;"><i class="fab fa-instagram"></i> DM to Order</a></li>
+        </ul>
+      </nav>
+      
+      <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content reveal">
+          <span class="section-tag">Sketching • Painting • Canvas Magic</span>
+          <h1 class="hero-title">Nature & Art, Handcrafted in <span class="gradient-text">Harmony</span>.</h1>
+          <p class="hero-subtitle">
+            Welcome to my creative space. I design custom house décor frames, fine charcoal drawings, and vibrant canvas paintings that bring natural elegance and dreamy energy to your home.
+          </p>
+          <div class="hero-buttons">
+            <a href="#gallery" class="btn btn-primary">Explore Gallery <i class="fas fa-arrow-right"></i></a>
+            <a href="#previewer" class="btn btn-secondary">Interactive Room Preview</a>
+          </div>
+        </div>
+        
+        <!-- Live Scenario Desk Area -->
+        <div class="hero-scenario reveal" style="transition-delay: 0.2s;">
+          <div class="workspace-mockup">
+            <img src="assets/hero_desk.png" alt="Live Artist Desk Scenario" class="workspace-bg">
+            <div class="desk-artwork-container">
+              <img src="assets/sketch_botanical.png" alt="Current Sketching Artwork" class="desk-artwork" id="desk-artwork-img">
+            </div>
+            <div class="workspace-overlay"></div>
+            <div class="workspace-label">
+              <span>Current project on desk</span>
+              <span id="desk-artwork-name" class="handwritten" style="font-size: 1.45rem; color: var(--color-gold); margin-top: -5px;">Botanical Study</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-img-wrapper">
+            <img src="assets/hero_desk.png" alt="Tanvi's Studio Workspace" class="about-img">
+          </div>
+          <div class="about-badge">
+            <span class="number">26+</span>
+            <span class="label">Commissions Done</span>
+          </div>
+        </div>
+        
+        <div class="about-content reveal" style="transition-delay: 0.2s;">
+          <span class="section-tag">Artist • Dreamer • Creator</span>
+          <h2 class="section-title">The Hand Behind the Strokes</h2>
+          <p class="about-text">
+            Hi, I'm Tanvi. For me, creating art is about transforming dreams and natural elements into visual poetry. Whether it's the crisp texture of a graphite sketch or the rich blending of colors on canvas, each piece is handcrafted with complete dedication.
+            <span class="handwritten" style="display: block; margin-top: 1.5rem; font-size: 2.3rem; transform: rotate(-3deg); color: var(--color-sage);">~ Tanvi</span>
+          </p>
+          
+          <div class="about-features">
+            <div class="about-feat-item">
+              <div class="about-feat-icon"><i class="fas fa-leaf"></i></div>
+              <div>
+                <h3 class="about-feat-title">Natural Elements</h3>
+                <p class="about-feat-desc">Botanical leaf patterns, florals, and earth-inspired landscapes are at the heart of my work.</p>
+              </div>
+            </div>
+            <div class="about-feat-item">
+              <div class="about-feat-icon"><i class="fas fa-hammer"></i></div>
+              <div>
+                <h3 class="about-feat-title">Custom Crafting</h3>
+                <p class="about-feat-desc">I tailor each drawing and canvas painting to match your house décor frames perfectly.</p>
+              </div>
+            </div>
+            <div class="about-feat-item">
+              <div class="about-feat-icon"><i class="fas fa-brush"></i></div>
+              <div>
+                <h3 class="about-feat-title">Canvas Magic</h3>
+                <p class="about-feat-desc">Rich acrylics and mixed media applied with organic textures for dreamlike spaces.</p>
+              </div>
+            </div>
+            <div class="about-feat-item">
+              <div class="about-feat-icon"><i class="fab fa-instagram"></i></div>
+              <div>
+                <h3 class="about-feat-title">Direct Service</h3>
+                <p class="about-feat-desc">Order easily via direct message. Enjoy personalized checkout and details on the fly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <span class="section-tag">Handcrafted Gallery</span>
+        <h2 class="section-title">Explore My Creations</h2>
+        <p>Filter through different mediums and house décor frame options.</p>
+        
+        <ul class="gallery-filters">
+          <li><button class="filter-btn active" data-filter="all">All Artworks</button></li>
+          <li><button class="filter-btn" data-filter="canvas">Canvas Magic</button></li>
+          <li><button class="filter-btn" data-filter="sketch">Detailed Sketching</button></li>
+          <li><button class="filter-btn" data-filter="frame">House Décor Frames</button></li>
+        </ul>
+      </div>
+      
+      <div class="gallery-grid reveal" style="transition-delay: 0.2s;">
+        <!-- Card 1 -->
+        <div class="gallery-item" data-category="canvas" data-img="assets/canvas_dreamy.png">
+          <div class="gallery-img-container">
+            <span class="gallery-item-tag">Canvas Magic</span>
+            <img src="assets/canvas_dreamy.png" alt="Nebula Forest River Painting" class="gallery-img">
+          </div>
+          <div class="gallery-info">
+            <h3 class="gallery-title">Nebula Forest River</h3>
+            <p class="gallery-desc">Acrylic on canvas sheet. Vibrant constellations reflecting over organic spruce forests and calm water.</p>
+            <div class="gallery-footer">
+              <span class="gallery-price-tag">₹7,900 INR</span>
+              <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="gallery-item" data-category="sketch" data-img="assets/sketch_botanical.png">
+          <div class="gallery-img-container">
+            <span class="gallery-item-tag">Sketching</span>
+            <img src="assets/sketch_botanical.png" alt="Wildflower Botanical Study Sketch" class="gallery-img">
+          </div>
+          <div class="gallery-info">
+            <h3 class="gallery-title">Botanical Study</h3>
+            <p class="gallery-desc">Graphite on textured off-white artist sheet. Detailed shading capturing natural wildflower nodes.</p>
+            <div class="gallery-footer">
+              <span class="gallery-price-tag">₹3,750 INR</span>
+              <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 (Frames) -->
+        <div class="gallery-item" data-category="frame" data-img="assets/canvas_dreamy.png">
+          <div class="gallery-img-container">
+            <span class="gallery-item-tag">House Décor Frames</span>
+            <!-- Custom Styled Frame Card representation -->
+            <div style="width: 100%; height: 100%; padding: 1.5rem; background: #1a1a1a; display: flex; align-items: center; justify-content: center;">
+              <div style="border: 8px solid #c2996d; width: 85%; height: 85%; box-shadow: 0 10px 20px rgba(0,0,0,0.5); overflow: hidden;">
+                <img src="assets/canvas_dreamy.png" alt="Framed Nebula Forest" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <h3 class="gallery-title">Oak Framed Nebula</h3>
+            <p class="gallery-desc">Ready-to-hang natural wood frame enclosing the Nebula landscape. Outfitted with premium acrylic glass protection.</p>
+            <div class="gallery-footer">
+              <span class="gallery-price-tag">₹9,900 INR</span>
+              <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE WALL PREVIEWER -->
+  <section id="previewer" class="previewer">
+    <div class="container">
+      <div class="previewer-grid">
+        <!-- Live Scenario Wall Render -->
+        <div class="reveal">
+          <span class="section-tag">Interactive Live Scenario</span>
+          <h2 class="section-title" style="margin-bottom: 2rem;">Visualizer Wall</h2>
+          
+          <div class="wall-scene" id="wall-scene">
+            <img src="assets/room_living.png" alt="Living Room backdrop" class="wall-bg" id="wall-bg-img">
+            
+            <!-- Canvas container -->
+            <div class="wall-canvas-container frame-none size-md" id="wall-canvas">
+              <img src="assets/canvas_dreamy.png" alt="Art preview on wall" class="wall-canvas-img" id="wall-art-img">
+              <div class="canvas-shadow-overlay"></div>
+            </div>
+          </div>
+          <p style="margin-top: 1rem; font-size: 0.85rem; text-align: center; color: var(--text-muted);">
+            <i class="fas fa-circle-info"></i> Rendered relative to realistic furniture and shadows. Tweak inputs on the right.
+          </p>
+        </div>
+        
+        <!-- Controls panel -->
+        <div class="previewer-controls glass-panel reveal" style="transition-delay: 0.2s;">
+          <h3 style="font-size: 1.6rem; border-bottom: 1px solid var(--border-light); padding-bottom: 1rem; margin-bottom: 1rem;">Customize Setting</h3>
+          
+          <!-- Control 1: Artwork Selection -->
+          <div class="control-group">
+            <span class="control-label">1. Choose Artwork</span>
+            <div class="art-selector-grid" style="grid-template-columns: repeat(4, 1fr);">
+              <div class="art-thumb active" data-art="assets/canvas_dreamy.png" data-name="Nebula River" data-medium="canvas">
+                <img src="assets/canvas_dreamy.png" alt="Nebula River Thumbnail">
+              </div>
+              <div class="art-thumb" data-art="assets/sketch_botanical.png" data-name="Botanical Study" data-medium="sketch">
+                <img src="assets/sketch_botanical.png" alt="Botanical Study Thumbnail">
+              </div>
+              <div class="art-thumb" data-art="assets/user_art1.jpg" data-name="Creations Grid 1" data-medium="canvas">
+                <img src="assets/user_art1.jpg" alt="User Art Grid 1 Thumbnail">
+              </div>
+              <div class="art-thumb" data-art="assets/user_art2.jpg" data-name="Creations Grid 2" data-medium="sketch">
+                <img src="assets/user_art2.jpg" alt="User Art Grid 2 Thumbnail">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Control 2: Room Choice -->
+          <div class="control-group">
+            <span class="control-label">2. Select Room Scene</span>
+            <div class="control-options">
+              <button class="opt-btn active" data-room="assets/room_living.png">Cozy Living Room</button>
+              <button class="opt-btn" data-room="assets/room_bedroom.png">Minimalist Bedroom</button>
+            </div>
+          </div>
+          
+          <!-- Control 3: Sizing -->
+          <div class="control-group">
+            <span class="control-label">3. Frame Sizing</span>
+            <div class="control-options">
+              <button class="opt-btn" data-size="sm">Small (A5 - 6"x8")</button>
+              <button class="opt-btn active" data-size="md">Medium (A4 - 8"x12")</button>
+              <button class="opt-btn" data-size="lg">Large (A3 - 12"x16")</button>
+            </div>
+          </div>
+          
+          <!-- Control 4: Frame Border -->
+          <div class="control-group">
+            <span class="control-label">4. House Décor Framing</span>
+            <div class="control-options">
+              <button class="opt-btn active" data-frame="none">No Frame (Canvas Sheet)</button>
+              <button class="opt-btn" data-frame="oak">Rustic Oak Wood</button>
+              <button class="opt-btn" data-frame="black">Obsidian Metallic Black</button>
+              <button class="opt-btn" data-frame="gold">Classy Gold Lining</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM FEED SECTION -->
+  <section id="insta-feed" class="insta-feed">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <span class="section-tag">Instagram Creations</span>
+        <h2 class="section-title">Process Reels & Grid Feed</h2>
+        <p>A live snapshot of recent projects, speedpaint reels, and work in progress from <a href="https://www.instagram.com/artwithtanvi_.16/" target="_blank" style="color: var(--color-sage); font-weight: 500;">@artwithtanvi_.16</a>.</p>
+      </div>
+
+      <div class="insta-feed-grid reveal" style="transition-delay: 0.2s;">
+        <!-- Instagram Card 1 (Reels Compilation) -->
+        <div class="insta-card">
+          <div class="insta-card-header">
+            <div class="insta-profile-info">
+              <img src="assets/logo.png" alt="dreamystrokes profile" class="insta-profile-img">
+              <div>
+                <div class="insta-username">artwithtanvi_.16</div>
+                <div class="insta-sub">Instagram Reels Compilation</div>
+              </div>
+            </div>
+            <div class="insta-more-btn"><i class="fas fa-ellipsis-h"></i></div>
+          </div>
+          <div class="insta-image-wrapper" onclick="window.open('https://www.instagram.com/artwithtanvi_.16/', '_blank')">
+            <img src="assets/user_art1.jpg" alt="Instagram Reels and Paintings compilation" class="insta-feed-img">
+            <div class="insta-reel-overlay">
+              <div class="insta-play-icon"><i class="fab fa-instagram"></i></div>
+              <div class="insta-action-text">Watch Reels on Instagram</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instagram Card 2 (Artworks Compilation) -->
+        <div class="insta-card">
+          <div class="insta-card-header">
+            <div class="insta-profile-info">
+              <img src="assets/logo.png" alt="dreamystrokes profile" class="insta-profile-img">
+              <div>
+                <div class="insta-username">artwithtanvi_.16</div>
+                <div class="insta-sub">Mandalas & Sketches Grid</div>
+              </div>
+            </div>
+            <div class="insta-more-btn"><i class="fas fa-ellipsis-h"></i></div>
+          </div>
+          <div class="insta-image-wrapper" onclick="window.open('https://www.instagram.com/artwithtanvi_.16/', '_blank')">
+            <img src="assets/user_art2.jpg" alt="Instagram Mandalas and Sketches compilation" class="insta-feed-img">
+            <div class="insta-reel-overlay">
+              <div class="insta-play-icon"><i class="fab fa-instagram"></i></div>
+              <div class="insta-action-text">View Feed on Instagram</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <span class="section-tag">Community Love</span>
+        <h2 class="section-title">Compliments & Conversations</h2>
+        <p>Kind comments and feedback left by our wonderful supporters on Instagram.</p>
+      </div>
+
+      <div class="comments-container reveal" style="transition-delay: 0.2s;">
+        <!-- Comment 1 -->
+        <div class="comment-bubble">
+          <div class="comment-avatar avatar-1">M</div>
+          <div class="comment-content">
+            <div class="comment-author">@maya_sketches <i class="fas fa-check-circle" title="Verified"></i></div>
+            <p class="comment-text">The detailing in that circular mandala is pure magic! How do you keep it so symmetric? Absolutely incredible work. 😍</p>
+            <div class="comment-meta">
+              <span>2d</span>
+              <span>Reply</span>
+            </div>
+          </div>
+          <div class="comment-heart" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fas'); this.querySelector('i').classList.toggle('far');">
+            <i class="far fa-heart"></i>
+          </div>
+        </div>
+
+        <!-- Comment 2 -->
+        <div class="comment-bubble">
+          <div class="comment-avatar avatar-2">R</div>
+          <div class="comment-content">
+            <div class="comment-author">@rahul.sharma</div>
+            <p class="comment-text">I ordered a custom house decor frame of a cozy cottage landscape, and it looks beautiful in my living room! The framing is super clean.</p>
+            <div class="comment-meta">
+              <span>5d</span>
+              <span>Reply</span>
+            </div>
+          </div>
+          <div class="comment-heart" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fas'); this.querySelector('i').classList.toggle('far');">
+            <i class="far fa-heart"></i>
+          </div>
+        </div>
+
+        <!-- Comment 3 -->
+        <div class="comment-bubble">
+          <div class="comment-avatar avatar-3">A</div>
+          <div class="comment-content">
+            <div class="comment-author">@art_enthusiast_12</div>
+            <p class="comment-text">Your strokes are indeed dreamy! The Nebula canvas painting is stunning, the blending of the skies feels so galactic! 🌌✨</p>
+            <div class="comment-meta">
+              <span>1w</span>
+              <span>Reply</span>
+            </div>
+          </div>
+          <div class="comment-heart" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fas'); this.querySelector('i').classList.toggle('far');">
+            <i class="far fa-heart"></i>
+          </div>
+        </div>
+
+        <!-- Comment 4 -->
+        <div class="comment-bubble">
+          <div class="comment-avatar avatar-4">S</div>
+          <div class="comment-content">
+            <div class="comment-author">@shinchan_forever</div>
+            <p class="comment-text">OMG that Shinchan canvas with the easel is the cutest thing I've seen all day! 🥺❤️ Please make more animation miniatures!</p>
+            <div class="comment-meta">
+              <span>1w</span>
+              <span>Reply</span>
+            </div>
+          </div>
+          <div class="comment-heart" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fas'); this.querySelector('i').classList.toggle('far');">
+            <i class="far fa-heart"></i>
+          </div>
+        </div>
+
+        <!-- Comment 5 -->
+        <div class="comment-bubble">
+          <div class="comment-avatar avatar-5">V</div>
+          <div class="comment-content">
+            <div class="comment-author">@vibes.and.decor</div>
+            <p class="comment-text">The "catch a falling star" moon illustration is so creative. Love the stars dangling from it. Truly beautiful concept. 🌙⭐</p>
+            <div class="comment-meta">
+              <span>2w</span>
+              <span>Reply</span>
+            </div>
+          </div>
+          <div class="comment-heart" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fas'); this.querySelector('i').classList.toggle('far');">
+            <i class="far fa-heart"></i>
+          </div>
+        </div>
+
+        <!-- Comment 6 -->
+        <div class="comment-bubble">
+          <div class="comment-avatar avatar-6">K</div>
+          <div class="comment-content">
+            <div class="comment-author">@kavya_prakash</div>
+            <p class="comment-text">Ordered a pencil sketch for my friend's birthday and she loved it. The charcoal portrait shading was spot on. Thank you Tanvi!</p>
+            <div class="comment-meta">
+              <span>3w</span>
+              <span>Reply</span>
+            </div>
+          </div>
+          <div class="comment-heart" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fas'); this.querySelector('i').classList.toggle('far');">
+            <i class="far fa-heart"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST ESTIMATOR -->
+  <section id="estimator" class="estimator">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <span class="section-tag">Interactive Pricing</span>
+        <h2 class="section-title">Design Your Frame & Budget</h2>
+        <p>Get a quick estimate based on size, art style, and framing choices.</p>
+      </div>
+      
+      <div class="estimator-panel glass-panel reveal" style="transition-delay: 0.2s;">
+        <!-- Input parameters -->
+        <div class="estimator-inputs">
+          
+          <!-- Style selection -->
+          <div class="control-group">
+            <span class="control-label">Art Style Medium</span>
+            <div class="control-options">
+              <button class="opt-btn active" id="est-style-sketch" data-est-style="sketch">Graphite/Charcoal Sketch</button>
+              <button class="opt-btn" id="est-style-canvas" data-est-style="canvas">Vibrant Canvas Magic</button>
+            </div>
+          </div>
+          
+          <!-- Size Slider -->
+          <div class="input-slider-group">
+            <div class="slider-header">
+              <span class="control-label">Artwork Sizing</span>
+              <span id="slider-size-label">Medium (A4 Size)</span>
+            </div>
+            <input type="range" min="1" max="3" value="2" class="slider-input" id="size-slider">
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
+              <span>Small (A5)</span>
+              <span>Medium (A4)</span>
+              <span>Large (A3)</span>
+            </div>
+          </div>
+          
+          <!-- Frame options -->
+          <div class="control-group">
+            <span class="control-label">Frame Material</span>
+            <div class="control-options">
+              <button class="opt-btn active" data-est-frame="none">Unframed Canvas Sheet</button>
+              <button class="opt-btn" data-est-frame="oak">Natural Oak Wood Frame</button>
+              <button class="opt-btn" data-est-frame="black">Metallic Obsidian Frame</button>
+              <button class="opt-btn" data-est-frame="gold">Classic Gold Leaf Frame</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Summary readout -->
+        <div class="estimator-summary">
+          <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-primary);">Estimated Investment</h3>
+          
+          <div class="price-display" style="margin-bottom: 0.5rem;">
+            <span class="price-currency">₹</span><span class="price-val" id="price-val-inr">3,750</span>
+          </div>
+          <div class="handwritten" style="font-size: 1.5rem; color: var(--color-terracotta); border: 1px dashed var(--color-terracotta); padding: 0.2rem 0.8rem; border-radius: var(--radius-sm); display: inline-block; transform: rotate(-3deg); margin-bottom: 1.5rem; opacity: 0.85;">100% Handcrafted with Love</div>
+          
+          <p class="pricing-note">
+            Selected Choice: <br><strong id="summary-spec-text" style="color: var(--color-sage);">Medium (A4) Graphite Sketch without Frame</strong>
+          </p>
+          
+          <button class="btn btn-primary" id="order-dm-btn" style="width: 100%;">
+            <i class="fab fa-instagram"></i> Place Order via Instagram DM
+          </button>
+          
+          <!-- Hidden message container for copying -->
+          <div id="dm-copy-success" style="font-size: 0.8rem; color: var(--color-gold); margin-top: 0.75rem; display: none;">
+            <i class="fas fa-check-circle"></i> DM message copied! Redirecting you...
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL CONTACT & INQUIRY SECTION -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <span class="section-tag">Direct Inquiries</span>
+        <h2 class="section-title">Professional Commission Request</h2>
+        <p>Would you prefer to coordinate via email? Fill out this brief form and send it directly to my official inbox.</p>
+      </div>
+
+      <div class="glass-panel reveal" style="max-width: 720px; margin: 3rem auto 0 auto; transition-delay: 0.2s;">
+        <form id="email-inquiry-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <div class="form-row-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <!-- Name Input -->
+            <div class="control-group">
+              <label for="contact-name" class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Your Name</label>
+              <input type="text" id="contact-name" required placeholder="Enter your name" 
+                     style="width: 100%; padding: 0.9rem; border-radius: var(--radius-sm); background: rgba(8, 12, 9, 0.6); border: 1px solid var(--border-light); color: var(--text-primary); font-family: inherit; outline: none; transition: var(--transition-fast);">
+            </div>
+            
+            <!-- Email Input -->
+            <div class="control-group">
+              <label for="contact-email" class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Your Email Address</label>
+              <input type="email" id="contact-email" required placeholder="Enter your email" 
+                     style="width: 100%; padding: 0.9rem; border-radius: var(--radius-sm); background: rgba(8, 12, 9, 0.6); border: 1px solid var(--border-light); color: var(--text-primary); font-family: inherit; outline: none; transition: var(--transition-fast);">
+            </div>
+          </div>
+
+          <!-- Sizing Option (Prefilled from Estimator if customized) -->
+          <div class="control-group">
+            <label for="contact-medium" class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Preferred Medium & Sizing (Configured above)</label>
+            <input type="text" id="contact-medium" placeholder="e.g. Medium A4 Graphite Sketch + Oak Wood Frame"
+                   style="width: 100%; padding: 0.9rem; border-radius: var(--radius-sm); background: rgba(8, 12, 9, 0.6); border: 1px solid var(--border-light); color: var(--text-primary); font-family: inherit; outline: none; transition: var(--transition-fast);">
+          </div>
+
+          <!-- Message Textarea -->
+          <div class="control-group">
+            <label for="contact-message" class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Describe Your Vision</label>
+            <textarea id="contact-message" rows="5" required placeholder="Mention scene references, color schemes, framing preferences, or delivery deadlines..." 
+                      style="width: 100%; padding: 0.9rem; border-radius: var(--radius-sm); background: rgba(8, 12, 9, 0.6); border: 1px solid var(--border-light); color: var(--text-primary); font-family: inherit; outline: none; resize: vertical; transition: var(--transition-fast);"></textarea>
+          </div>
+
+          <!-- Action Button -->
+          <button type="submit" id="contact-submit-btn" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">
+            <i class="far fa-envelope"></i> Send Commission Inquiry
+          </button>
+          
+          <!-- Status Message -->
+          <div id="contact-status-msg" style="padding: 1rem; border-radius: var(--radius-sm); display: none; font-size: 0.9rem; text-align: center; transition: var(--transition-fast); border: 1px solid transparent;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX CONTAINER -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close"><i class="fas fa-times"></i></button>
+      <img src="assets/canvas_dreamy.png" alt="Expanded view" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-caption">
+        <h4 class="lightbox-title" id="lightbox-title">Nebula Forest River</h4>
+        <p class="lightbox-desc" id="lightbox-desc">Details of the canvas painting</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo-link">
+            <img src="assets/logo.png" alt="dreamystrokes logo" class="logo-img">
+            <span class="logo-text">dreamystrokes✨️</span>
+          </div>
+          <p class="footer-desc">
+            Bringing nature, dreams, and fine artistry together into custom home frames and original paintings.
+          </p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/artwithtanvi_.16/" target="_blank" class="social-icon" aria-label="Instagram Link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=25ai056@sxca.edu.in" target="_blank" class="social-icon" aria-label="Email Link">
+              <i class="far fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-h3">Studio Pages</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Artist Bio</a></li>
+            <li><a href="#gallery">Showcase</a></li>
+            <li><a href="#previewer">Live Visualizer</a></li>
+            <li><a href="#estimator">Cost Configurator</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-h3">Art Mediums</h3>
+          <ul class="footer-links">
+            <li><a href="#gallery">Graphite Sketches</a></li>
+            <li><a href="#gallery">Charcoal Sceneries</a></li>
+            <li><a href="#gallery">Acrylic Canvases</a></li>
+            <li><a href="#gallery">House Decor Framing</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-h3">Contact Details</h3>
+          <ul class="footer-links" style="color: var(--text-secondary);">
+            <li><i class="fab fa-instagram" style="margin-right: 0.5rem; color: var(--color-sage);"></i> @artwithtanvi_.16</li>
+            <li><i class="far fa-envelope" style="margin-right: 0.5rem; color: var(--color-sage);"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=25ai056@sxca.edu.in" target="_blank">25ai056@sxca.edu.in</a></li>
+            <li><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; color: var(--color-sage);"></i> India</li>
+            <li><i class="fas fa-clock" style="margin-right: 0.5rem; color: var(--color-sage);"></i> Open for Custom Orders</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 dreamystrokes. Handcrafted by Tanvi. All rights reserved.</p>
+        <p>Inspired by kreska.art</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
