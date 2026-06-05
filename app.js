@@ -657,6 +657,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let subtotal = 0;
     cart.forEach(item => {
       msg += `- ${item.quantity}x ${item.title} (₹${item.price.toLocaleString('en-IN')} each)\n`;
+      // Append image reference URL from GitHub repository
+      const imgFileName = item.img.split('/').pop();
+      const publicImageUrl = `https://raw.githubusercontent.com/25ai002-cmd/ArtWithTanvi.16/main/assets/${imgFileName}`;
+      msg += `  Photo Reference: ${publicImageUrl}\n`;
       subtotal += item.price * item.quantity;
     });
     msg += `\nTotal: ₹${subtotal.toLocaleString('en-IN')} INR\n\nPlease let me know how to complete my order! Thank you.`;
