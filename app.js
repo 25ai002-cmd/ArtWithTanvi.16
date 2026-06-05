@@ -694,6 +694,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- 11. INSTAGRAM BIO LINK AUTO-SCROLL TO GALLERY ---
+  const isFromInstagram = (document.referrer && document.referrer.includes('instagram.com')) || 
+                          window.location.search.includes('ref=ig') || 
+                          window.location.search.includes('source=instagram');
+                          
+  if (isFromInstagram) {
+    setTimeout(() => {
+      const gallerySection = document.getElementById('gallery');
+      if (gallerySection) {
+        gallerySection.scrollIntoView({ behavior: 'smooth' });
+        // Set active state on gallery navigation link
+        const galleryNavLink = document.querySelector('a[href="#gallery"]');
+        if (galleryNavLink) {
+          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+          galleryNavLink.classList.add('active');
+        }
+      }
+    }, 1200); // Stagger slightly to allow scroll reveal animations to load
+  }
+
   // Initialize UI
   updateCartUI();
 });
