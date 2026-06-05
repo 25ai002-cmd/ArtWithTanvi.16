@@ -2,6 +2,32 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- 0. CUSTOM TOAST NOTIFICATION UTILITY ---
+  function showToast(message, type = 'info') {
+    let container = document.getElementById('toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'toast-container';
+      container.className = 'toast-container';
+      document.body.appendChild(container);
+    }
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    let iconClass = 'fa-info-circle';
+    if (type === 'success') iconClass = 'fa-check-circle';
+    if (type === 'error') iconClass = 'fa-exclamation-circle';
+    toast.innerHTML = `
+      <i class="fas ${iconClass} toast-icon"></i>
+      <span class="toast-message">${message}</span>
+    `;
+    container.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 50);
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 400);
+    }, 3500);
+  }
+
   // --- 1. HERO DESK CAROUSEL SCENARIO ---
   const deskArtworks = [
     { img: 'assets/sketch_botanical.png', name: 'Botanical Study' },
@@ -324,13 +350,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleFileSelect(file) {
       if (!file.type.startsWith('image/')) {
-        alert('Please upload an image file (PNG, JPG, JPEG).');
+        showToast('Please upload an image file (PNG, JPG, JPEG).', 'error');
         resetUploadZone();
         return;
       }
 
       if (file.size > 5 * 1024 * 1024) {
-        alert('Image size exceeds 5MB. Please upload a smaller image.');
+        showToast('Image size exceeds 5MB. Please upload a smaller image.', 'error');
         resetUploadZone();
         return;
       }
@@ -643,7 +669,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (cart.length === 0) return;
       const msg = buildCartMessage();
       navigator.clipboard.writeText(msg).then(() => {
-        alert('Order message copied to clipboard! Redirecting you to Instagram DM...');
+        showToast('Order message copied! Redirecting to Instagram DMs...', 'success');
         window.open('https://www.instagram.com/artwithtanvi_.16/', '_blank');
       }).catch(err => {
         window.open('https://www.instagram.com/artwithtanvi_.16/', '_blank');
