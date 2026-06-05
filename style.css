@@ -801,6 +801,24 @@ nav a:hover::after, nav a.active::after {
 .size-md { width: 32%; }
 .size-lg { width: 42%; }
 
+/* Cozy Living Room position and sizing overrides (positions inside the right wall frame) */
+.wall-scene.room-living .wall-canvas-container {
+  top: 33.5%;
+  left: 73.5%;
+}
+.wall-scene.room-living .size-sm { width: 17%; }
+.wall-scene.room-living .size-md { width: 23%; }
+.wall-scene.room-living .size-lg { width: 29%; }
+
+/* Minimalist Bedroom position and sizing overrides (positions inside the left wall frame) */
+.wall-scene.room-bedroom .wall-canvas-container {
+  top: 47.5%;
+  left: 11.5%;
+}
+.wall-scene.room-bedroom .size-sm { width: 10%; }
+.wall-scene.room-bedroom .size-md { width: 13%; }
+.wall-scene.room-bedroom .size-lg { width: 16%; }
+
 /* Control panel for previewer */
 .previewer-controls {
   display: flex;

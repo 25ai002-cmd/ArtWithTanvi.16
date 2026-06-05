@@ -241,6 +241,17 @@ document.addEventListener('DOMContentLoaded', () => {
           wallBgImg.style.opacity = 1;
         }, 300);
       }
+      
+      // Update room class on wall-scene container for CSS positioning
+      const wallScene = document.getElementById('wall-scene');
+      if (wallScene) {
+        wallScene.classList.remove('room-living', 'room-bedroom');
+        if (newRoomImg.includes('room_living')) {
+          wallScene.classList.add('room-living');
+        } else if (newRoomImg.includes('room_bedroom')) {
+          wallScene.classList.add('room-bedroom');
+        }
+      }
     });
   });
   
