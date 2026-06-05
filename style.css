@@ -16,7 +16,7 @@
   --color-lavender: #dadff2; /* Soft periwinkle accent */
   
   /* Text colors */
-  --text-primary: #2b3530; /* Deep charcoal sage for reading */
+  --text-primary: #2b3530; /* Deep slate sage for reading */
   --text-secondary: #526357; /* Soft slate sage for descriptions */
   --text-muted: #7b8f81; /* Muted green-gray for labels */
   
@@ -599,7 +599,7 @@ nav a:hover::after, nav a.active::after {
 
 .filter-btn:hover, .filter-btn.active {
   background: var(--color-sage);
-  color: var(--text-primary); /* Dark charcoal sage for high contrast and readability on pastel green */
+  color: var(--text-primary); /* Dark slate sage for high contrast and readability on pastel green */
   border-color: var(--color-sage);
   box-shadow: 0 4px 15px rgba(141, 168, 147, 0.15);
   font-weight: 500;
