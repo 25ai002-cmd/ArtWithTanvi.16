@@ -78,7 +78,6 @@
           <li><a href="#about" class="nav-link">Artist</a></li>
           <li><a href="#gallery" class="nav-link">Gallery</a></li>
           <li><a href="#previewer" class="nav-link">Live Preview</a></li>
-          <li><a href="#estimator" class="nav-link">Cost Estimator</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
           <li><a href="https://www.instagram.com/artwithtanvi_.16/" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1.5rem;"><i class="fab fa-instagram"></i> DM to Order</a></li>
         </ul>
@@ -633,79 +632,7 @@
     </div>
   </section>
 
-  <!-- COST ESTIMATOR -->
-  <section id="estimator" class="estimator">
-    <div class="container">
-      <div class="gallery-header reveal">
-        <span class="section-tag">Interactive Pricing</span>
-        <h2 class="section-title">Design Your Frame & Budget</h2>
-        <p>Get a quick estimate based on size, art style, and framing choices.</p>
-      </div>
-      
-      <div class="estimator-panel glass-panel reveal" style="transition-delay: 0.2s;">
-        <!-- Input parameters -->
-        <div class="estimator-inputs">
-          
-          <!-- Style selection -->
-          <div class="control-group">
-            <span class="control-label">Art Style Medium</span>
-            <div class="control-options">
-              <button class="opt-btn active" id="est-style-sketch" data-est-style="sketch">Graphite/Charcoal Sketch</button>
-              <button class="opt-btn" id="est-style-canvas" data-est-style="canvas">Vibrant Canvas Magic</button>
-            </div>
-          </div>
-          
-          <!-- Size Slider -->
-          <div class="input-slider-group">
-            <div class="slider-header">
-              <span class="control-label">Artwork Sizing</span>
-              <span id="slider-size-label">Medium (A4 Size)</span>
-            </div>
-            <input type="range" min="1" max="3" value="2" class="slider-input" id="size-slider">
-            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
-              <span>Small (A5)</span>
-              <span>Medium (A4)</span>
-              <span>Large (A3)</span>
-            </div>
-          </div>
-          
-          <!-- Frame options -->
-          <div class="control-group">
-            <span class="control-label">Frame Material</span>
-            <div class="control-options">
-              <button class="opt-btn active" data-est-frame="none">Unframed Canvas Sheet</button>
-              <button class="opt-btn" data-est-frame="oak">Natural Oak Wood Frame</button>
-              <button class="opt-btn" data-est-frame="black">Metallic Obsidian Frame</button>
-              <button class="opt-btn" data-est-frame="gold">Classic Gold Leaf Frame</button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Summary readout -->
-        <div class="estimator-summary">
-          <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-primary);">Estimated Investment</h3>
-          
-          <div class="price-display" style="margin-bottom: 0.5rem;">
-            <span class="price-currency">₹</span><span class="price-val" id="price-val-inr">3,750</span>
-          </div>
-          <div class="handwritten" style="font-size: 1.5rem; color: var(--color-terracotta); border: 1px dashed var(--color-terracotta); padding: 0.2rem 0.8rem; border-radius: var(--radius-sm); display: inline-block; transform: rotate(-3deg); margin-bottom: 1.5rem; opacity: 0.85;">100% Handcrafted with Love</div>
-          
-          <p class="pricing-note">
-            Selected Choice: <br><strong id="summary-spec-text" style="color: var(--color-sage);">Medium (A4) Graphite Sketch without Frame</strong>
-          </p>
-          
-          <button class="btn btn-primary" id="order-dm-btn" style="width: 100%;">
-            <i class="fab fa-instagram"></i> Place Order via Instagram DM
-          </button>
-          
-          <!-- Hidden message container for copying -->
-          <div id="dm-copy-success" style="font-size: 0.8rem; color: var(--color-gold); margin-top: 0.75rem; display: none;">
-            <i class="fas fa-check-circle"></i> DM message copied! Redirecting you...
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- PROFESSIONAL CONTACT & INQUIRY SECTION -->
   <section id="contact" class="contact">
@@ -733,9 +660,9 @@
             </div>
           </div>
 
-          <!-- Sizing Option (Prefilled from Estimator if customized) -->
+          <!-- Sizing Option -->
           <div class="control-group">
-            <label for="contact-medium" class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Preferred Medium & Sizing (Configured above)</label>
+            <label for="contact-medium" class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Preferred Medium & Sizing</label>
             <input type="text" id="contact-medium" placeholder="e.g. Medium A4 Graphite Sketch + Oak Wood Frame" class="contact-input">
           </div>
 
@@ -816,7 +743,6 @@
             <li><a href="#about">Artist Bio</a></li>
             <li><a href="#gallery">Showcase</a></li>
             <li><a href="#previewer">Live Visualizer</a></li>
-            <li><a href="#estimator">Cost Configurator</a></li>
           </ul>
         </div>
         

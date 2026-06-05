@@ -225,7 +225,6 @@ document.addEventListener('DOMContentLoaded', () => {
       thumb.classList.add('active');
       
       const newArtSrc = thumb.getAttribute('data-art');
-      const newArtMedium = thumb.getAttribute('data-medium');
       
       if (wallArtImg) {
         wallArtImg.style.opacity = 0;
@@ -233,17 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
           wallArtImg.src = newArtSrc;
           wallArtImg.style.opacity = 1;
         }, 300);
-      }
-      
-      // Auto-update Est Pricing medium to match
-      if (newArtMedium) {
-        document.querySelectorAll('[data-est-style]').forEach(btn => {
-          btn.classList.remove('active');
-          if (btn.getAttribute('data-est-style') === newArtMedium) {
-            btn.classList.add('active');
-          }
-        });
-        updatePriceEstimate();
       }
     });
   });
@@ -277,169 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 7. INTERACTIVE COST ESTIMATOR ---
-  let selectedMedium = 'sketch'; // 'sketch' or 'canvas'
-  let selectedSliderSize = 2; // 1: Small, 2: Medium, 3: Large
-  let selectedFrame = 'none'; // 'none', 'oak', 'black', 'gold'
-  
-  const styleSketchBtn = document.getElementById('est-style-sketch');
-  const styleCanvasBtn = document.getElementById('est-style-canvas');
-  const sizeSlider = document.getElementById('size-slider');
-  const sizeLabel = document.getElementById('slider-size-label');
-  const estFrameButtons = document.querySelectorAll('[data-est-frame]');
-  
-  const priceInrEl = document.getElementById('price-val-inr');
-  const summarySpecEl = document.getElementById('summary-spec-text');
-  
-  // Base rates and pricing rules in Indian Rupees (INR)
-  const baseRates = {
-    sketch: 2500,
-    canvas: 6000
-  };
-  
-  const sizeMultipliers = {
-    1: 1.0,  // Small (A5)
-    2: 1.5,  // Medium (A4)
-    3: 2.2   // Large (A3)
-  };
-  
-  const sizeTextMap = {
-    1: 'Small (A5 - 6"x8")',
-    2: 'Medium (A4 - 8"x12")',
-    3: 'Large (A3 - 12"x16")'
-  };
-  
-  const framingRates = {
-    none: { 1: 0, 2: 0, 3: 0 },
-    oak: { 1: 1000, 2: 1800, 3: 3000 },
-    black: { 1: 800, 2: 1500, 3: 2500 },
-    gold: { 1: 1500, 2: 2500, 3: 4200 }
-  };
-  
-  const frameTextMap = {
-    none: 'Without Frame (Canvas Sheet)',
-    oak: 'Natural Oak Wood Frame',
-    black: 'Metallic Obsidian Frame',
-    gold: 'Classic Gold Leaf Frame'
-  };
-  
-  const mediumTextMap = {
-    sketch: 'Graphite/Charcoal Sketch',
-    canvas: 'Vibrant Canvas Painting'
-  };
-  
-  function updatePriceEstimate() {
-    // 1. Get active inputs
-    // Medium
-    const activeMediumBtn = document.querySelector('[data-est-style].active');
-    if (activeMediumBtn) {
-      selectedMedium = activeMediumBtn.getAttribute('data-est-style');
-    }
-    
-    // Size Slider
-    if (sizeSlider) {
-      selectedSliderSize = parseInt(sizeSlider.value);
-    }
-    
-    // Frame
-    const activeFrameBtn = document.querySelector('[data-est-frame].active');
-    if (activeFrameBtn) {
-      selectedFrame = activeFrameBtn.getAttribute('data-est-frame');
-    }
-    
-    // 2. Perform Calculation
-    const base = baseRates[selectedMedium];
-    const multiplier = sizeMultipliers[selectedSliderSize];
-    const framingCost = framingRates[selectedFrame][selectedSliderSize];
-    
-    const totalInr = Math.round((base * multiplier) + framingCost);
-    
-    // 3. Update DOM UI
-    if (priceInrEl) priceInrEl.textContent = totalInr.toLocaleString('en-IN');
-    
-    if (sizeLabel) {
-      sizeLabel.textContent = sizeTextMap[selectedSliderSize];
-    }
-    
-    if (summarySpecEl) {
-      summarySpecEl.innerHTML = `${sizeTextMap[selectedSliderSize]} ${mediumTextMap[selectedMedium]}<br><span style="color: var(--color-terracotta);">${frameTextMap[selectedFrame]}</span>`;
-    }
-    
-    // Auto-prefill the contact form input with the current design config
-    const contactMediumInput = document.getElementById('contact-medium');
-    if (contactMediumInput) {
-      contactMediumInput.value = `${sizeTextMap[selectedSliderSize]} ${mediumTextMap[selectedMedium]} (${frameTextMap[selectedFrame]}) - Est: ₹${totalInr.toLocaleString('en-IN')}`;
-    }
-  }
-  
-  // Event Listeners for Estimator controls
-  if (styleSketchBtn && styleCanvasBtn) {
-    styleSketchBtn.addEventListener('click', () => {
-      styleCanvasBtn.classList.remove('active');
-      styleSketchBtn.classList.add('active');
-      updatePriceEstimate();
-    });
-    styleCanvasBtn.addEventListener('click', () => {
-      styleSketchBtn.classList.remove('active');
-      styleCanvasBtn.classList.add('active');
-      updatePriceEstimate();
-    });
-  }
-  
-  if (sizeSlider) {
-    sizeSlider.addEventListener('input', updatePriceEstimate);
-  }
-  
-  estFrameButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      estFrameButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      updatePriceEstimate();
-    });
-  });
-  
-  // Initialize Pricing estimator values
-  updatePriceEstimate();
 
-  // --- 8. INSTAGRAM DM ORDER BUTTON PROCESS ---
-  const orderDmBtn = document.getElementById('order-dm-btn');
-  const dmSuccessEl = document.getElementById('dm-copy-success');
-  
-  if (orderDmBtn) {
-    orderDmBtn.addEventListener('click', () => {
-      // 1. Build beautiful message template
-      const orderMessage = `Hi Tanvi! I visited your portfolio website and would love to place a custom art order.
-Here is the configuration I designed:
-- Medium Style: ${mediumTextMap[selectedMedium]}
-- Artwork Sizing: ${sizeTextMap[selectedSliderSize]}
-- Framing Selection: ${frameTextMap[selectedFrame]}
-- Estimated Budget: ₹${priceInrEl.textContent} INR
-
-Details/Reference Photo description:
-[Type your description or scene details here]
-
-Please let me know how we can proceed!`;
-
-      // 2. Copy message to user's clipboard
-      navigator.clipboard.writeText(orderMessage).then(() => {
-        // Show success notification
-        if (dmSuccessEl) {
-          dmSuccessEl.style.display = 'block';
-          setTimeout(() => {
-            dmSuccessEl.style.display = 'none';
-          }, 3500);
-        }
-        
-        // 3. Open Instagram direct link in a new window/tab after a short pause
-        setTimeout(() => {
-          window.open('https://www.instagram.com/artwithtanvi_.16/', '_blank');
-        }, 1200);
-      }).catch(err => {
-        console.error('Error copying text: ', err);
-        // Fallback: alert/redirect
-        window.open('https://www.instagram.com/artwithtanvi_.16/', '_blank');
-      });
-    });
   }
 
    // --- 9. PROFESSIONAL EMAIL INQUIRY PROCESS (BREVO API INTEGRATION) ---
