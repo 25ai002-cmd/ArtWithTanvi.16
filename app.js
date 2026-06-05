@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.style.top = '80px';
         navMenu.style.left = '0';
         navMenu.style.width = '100%';
-        navMenu.style.background = 'rgba(8, 12, 9, 0.95)';
+        navMenu.style.background = 'rgba(252, 250, 246, 0.95)';
         navMenu.style.padding = '2rem';
         navMenu.style.borderBottom = '1px solid var(--border-light)';
         
@@ -477,8 +477,8 @@ Please let me know how we can proceed!`;
 
     ['dragleave', 'drop'].forEach(eventName => {
       uploadZone.addEventListener(eventName, () => {
-        uploadZone.style.borderColor = 'var(--border-accent)';
-        uploadZone.style.backgroundColor = 'rgba(8, 12, 9, 0.4)';
+        uploadZone.style.borderColor = '';
+        uploadZone.style.backgroundColor = '';
       }, false);
     });
 

@@ -2,30 +2,31 @@
 
 /* --- DESIGN SYSTEM TOKENS --- */
 :root {
-  /* Palette */
-  --bg-obsidian: #080c09;
-  --bg-obsidian-rgb: 8, 12, 9;
-  --bg-card: rgba(18, 26, 20, 0.55);
-  --bg-card-hover: rgba(26, 38, 29, 0.75);
-  --color-sage: #8da893;
-  --color-sage-rgb: 141, 168, 147;
-  --color-terracotta: #d48c70;
-  --color-sand: #eae3d2;
-  --color-gold: #e5c158;
-  --color-forest: #14241a;
+  /* Soft Pastel Palette */
+  --bg-obsidian: #fcfaf6; /* Warm off-white / soft linen paper background */
+  --bg-obsidian-rgb: 252, 250, 246;
+  --bg-card: rgba(255, 255, 255, 0.65); /* Translucent white glass panel */
+  --bg-card-hover: rgba(255, 255, 255, 0.85);
+  --color-sage: #b3cbb9; /* Soft pastel mint/sage green */
+  --color-sage-rgb: 179, 203, 185;
+  --color-terracotta: #dcaaa6; /* Soft pastel peach sienna */
+  --color-sand: #f0ebd9; /* Light sandy linen */
+  --color-gold: #e6c88e; /* Muted pastel gold/honey */
+  --color-forest: #d9e5db; /* Very light pastel moss */
+  --color-lavender: #dadff2; /* Soft periwinkle accent */
   
   /* Text colors */
-  --text-primary: #f2f5f3;
-  --text-secondary: #9cb0a1;
-  --text-muted: #697a6e;
+  --text-primary: #2b3530; /* Deep charcoal sage for reading */
+  --text-secondary: #526357; /* Soft slate sage for descriptions */
+  --text-muted: #7b8f81; /* Muted green-gray for labels */
   
   /* Shadows & Borders */
-  --border-light: rgba(255, 255, 255, 0.05);
-  --border-accent: rgba(141, 168, 147, 0.2);
-  --glow-accent: rgba(141, 168, 147, 0.15);
-  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.7);
+  --border-light: rgba(179, 203, 185, 0.35); /* Soft mint border outlines */
+  --border-accent: rgba(179, 203, 185, 0.6);
+  --glow-accent: rgba(179, 203, 185, 0.25);
+  --shadow-sm: 0 4px 15px rgba(179, 203, 185, 0.1);
+  --shadow-md: 0 10px 30px rgba(82, 99, 87, 0.05);
+  --shadow-lg: 0 20px 45px rgba(82, 99, 87, 0.08);
   
   /* Transitions */
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -193,7 +194,7 @@ section {
 .glass-panel:hover {
   border-color: var(--border-accent);
   background: var(--bg-card-hover);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px var(--glow-accent);
+  box-shadow: 0 15px 35px rgba(82, 99, 87, 0.1), 0 0 20px var(--glow-accent);
 }
 
 /* Gradient text */
@@ -256,7 +257,7 @@ header {
 }
 
 header.scrolled {
-  background: rgba(8, 12, 9, 0.85);
+  background: rgba(252, 250, 246, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-light);
@@ -649,12 +650,12 @@ nav a:hover::after, nav a.active::after {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: rgba(8, 12, 9, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-lg);
   font-size: 0.7rem;
-  color: var(--color-sage);
+  color: var(--text-primary);
   border: 1px solid var(--border-accent);
   font-weight: 500;
   text-transform: uppercase;
@@ -707,7 +708,7 @@ nav a:hover::after, nav a.active::after {
 
 /* --- LIVE WALL PREVIEWER --- */
 .previewer {
-  background-color: rgba(12, 17, 13, 0.4);
+  background-color: #f0f4f1; /* Soft light sage pastel background */
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
@@ -1057,7 +1058,7 @@ nav a:hover::after, nav a.active::after {
 
 /* --- FOOTER --- */
 footer {
-  background-color: #050705;
+  background-color: #e8e4da; /* Soft warm-sand pastel background */
   border-top: 1px solid var(--border-light);
   padding: 5rem 0 3rem 0;
 }
@@ -1092,7 +1093,7 @@ footer {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-round);
-  background: rgba(255, 255, 255, 0.03);
+  background: #ffffff;
   border: 1px solid var(--border-light);
   color: var(--text-secondary);
   font-size: 1.1rem;
@@ -1101,7 +1102,7 @@ footer {
 
 .social-icon:hover {
   background: var(--color-sage);
-  color: var(--bg-obsidian);
+  color: #ffffff;
   border-color: var(--color-sage);
   transform: translateY(-2px);
 }
@@ -1265,7 +1266,7 @@ footer {
 
 /* --- INSTAGRAM FEED SECTION --- */
 .insta-feed {
-  background-color: rgba(12, 17, 13, 0.2);
+  background-color: #faf8f3; /* Soft warm sandy linen */
   border-top: 1px solid var(--border-light);
 }
 
@@ -1533,7 +1534,7 @@ footer {
   right: -400px;
   width: 400px;
   height: 100vh;
-  background: rgba(8, 12, 9, 0.98);
+  background: #fdfcfb; /* Soft linen cream background */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-left: 1px solid var(--border-light);
@@ -1621,7 +1622,8 @@ footer {
 
 .cart-item-price {
   font-size: 0.85rem;
-  color: var(--color-gold);
+  color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .cart-item-remove {
@@ -1639,7 +1641,7 @@ footer {
 .cart-drawer-footer {
   padding: 2rem;
   border-top: 1px solid var(--border-light);
-  background: rgba(18, 26, 20, 0.4);
+  background: var(--color-sand); /* Sandstone background */
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -1653,7 +1655,7 @@ footer {
 }
 
 .cart-subtotal-val {
-  color: var(--color-gold);
+  color: var(--text-primary);
   font-weight: 700;
 }
 
@@ -1681,7 +1683,7 @@ footer {
 
 /* Custom commission banner section styling */
 .custom-banner {
-  background: linear-gradient(135deg, rgba(20, 36, 26, 0.6) 0%, rgba(12, 17, 13, 0.8) 100%);
+  background: linear-gradient(135deg, #fcece9 0%, #eef3f0 100%); /* Pastel sienna to mint green gradient */
   border-top: 1px solid var(--border-accent);
   border-bottom: 1px solid var(--border-accent);
   text-align: center;
@@ -1693,5 +1695,44 @@ footer {
     width: 100%;
     right: -100%;
   }
+}
+
+/* --- CONTACT FORM PASTEL CLASSES --- */
+.contact-input, .contact-textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: var(--radius-sm);
+  background: #ffffff !important;
+  border: 1px solid var(--border-light) !important;
+  color: var(--text-primary) !important;
+  font-family: inherit;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.contact-input::placeholder, .contact-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.contact-input:focus, .contact-textarea:focus {
+  border-color: var(--color-sage) !important;
+  box-shadow: 0 0 10px var(--glow-accent);
+}
+
+.contact-upload-zone {
+  border: 1px dashed var(--border-accent) !important;
+  padding: 1.5rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5) !important;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.contact-upload-zone:hover {
+  border-color: var(--color-sage) !important;
+  background: rgba(179, 203, 185, 0.05) !important;
 }
 

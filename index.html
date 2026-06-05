@@ -235,7 +235,7 @@
           <div class="gallery-img-container">
             <span class="gallery-item-tag">House Décor Frames</span>
             <!-- Custom Styled Frame Card representation -->
-            <div style="width: 100%; height: 100%; padding: 1.5rem; background: #1a1a1a; display: flex; align-items: center; justify-content: center;">
+            <div style="width: 100%; height: 100%; padding: 1.5rem; background: #e8e4da; display: flex; align-items: center; justify-content: center;">
               <div style="border: 8px solid #c2996d; width: 85%; height: 85%; box-shadow: 0 10px 20px rgba(0,0,0,0.5); overflow: hidden;">
                 <img src="assets/20260604_180251.jpg" alt="Framed Enchanted Forest" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
@@ -303,7 +303,7 @@
           <div class="gallery-img-container">
             <span class="gallery-item-tag">House Décor Frames</span>
             <!-- Custom Styled Frame Card representation -->
-            <div style="width: 100%; height: 100%; padding: 1.5rem; background: #1a1a1a; display: flex; align-items: center; justify-content: center;">
+            <div style="width: 100%; height: 100%; padding: 1.5rem; background: #e8e4da; display: flex; align-items: center; justify-content: center;">
               <div style="border: 6px solid #e5c158; width: 85%; height: 85%; box-shadow: 0 10px 20px rgba(0,0,0,0.5); overflow: hidden;">
                 <img src="assets/20260604_180208.jpg" alt="Framed Moonlit Dream" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
@@ -704,36 +704,32 @@
             <!-- Name Input -->
             <div class="control-group">
               <label for="contact-name" class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Your Name</label>
-              <input type="text" id="contact-name" required placeholder="Enter your name" 
-                     style="width: 100%; padding: 0.9rem; border-radius: var(--radius-sm); background: rgba(8, 12, 9, 0.6); border: 1px solid var(--border-light); color: var(--text-primary); font-family: inherit; outline: none; transition: var(--transition-fast);">
+              <input type="text" id="contact-name" required placeholder="Enter your name" class="contact-input">
             </div>
             
             <!-- Email Input -->
             <div class="control-group">
               <label for="contact-email" class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Your Email Address</label>
-              <input type="email" id="contact-email" required placeholder="Enter your email" 
-                     style="width: 100%; padding: 0.9rem; border-radius: var(--radius-sm); background: rgba(8, 12, 9, 0.6); border: 1px solid var(--border-light); color: var(--text-primary); font-family: inherit; outline: none; transition: var(--transition-fast);">
+              <input type="email" id="contact-email" required placeholder="Enter your email" class="contact-input">
             </div>
           </div>
 
           <!-- Sizing Option (Prefilled from Estimator if customized) -->
           <div class="control-group">
             <label for="contact-medium" class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Preferred Medium & Sizing (Configured above)</label>
-            <input type="text" id="contact-medium" placeholder="e.g. Medium A4 Graphite Sketch + Oak Wood Frame"
-                   style="width: 100%; padding: 0.9rem; border-radius: var(--radius-sm); background: rgba(8, 12, 9, 0.6); border: 1px solid var(--border-light); color: var(--text-primary); font-family: inherit; outline: none; transition: var(--transition-fast);">
+            <input type="text" id="contact-medium" placeholder="e.g. Medium A4 Graphite Sketch + Oak Wood Frame" class="contact-input">
           </div>
 
           <!-- Message Textarea -->
           <div class="control-group">
             <label for="contact-message" class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Describe Your Vision</label>
-            <textarea id="contact-message" rows="5" required placeholder="Mention scene references, color schemes, framing preferences, or delivery deadlines..." 
-                      style="width: 100%; padding: 0.9rem; border-radius: var(--radius-sm); background: rgba(8, 12, 9, 0.6); border: 1px solid var(--border-light); color: var(--text-primary); font-family: inherit; outline: none; resize: vertical; transition: var(--transition-fast);"></textarea>
+            <textarea id="contact-message" rows="5" required placeholder="Mention scene references, color schemes, framing preferences, or delivery deadlines..." class="contact-textarea"></textarea>
           </div>
 
           <!-- Reference Image Upload -->
           <div class="control-group">
             <label class="control-label" style="margin-bottom: 0.4rem; display: block; font-size: 0.8rem;">Attach Reference Image (Optional)</label>
-            <div class="upload-zone" id="upload-zone" style="border: 1px dashed var(--border-accent); padding: 1.5rem; border-radius: var(--radius-sm); text-align: center; background: rgba(8, 12, 9, 0.4); cursor: pointer; transition: var(--transition-fast); position: relative;">
+            <div class="contact-upload-zone" id="upload-zone">
               <input type="file" id="contact-file" accept="image/*" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
               <div id="upload-prompt">
                 <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: var(--color-sage); margin-bottom: 0.5rem; display: block;"></i>
