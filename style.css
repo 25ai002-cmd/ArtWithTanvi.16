@@ -162,10 +162,10 @@ a {
 .decor-leaf {
   position: absolute;
   fill: var(--color-sage);
-  opacity: 0.05;
+  opacity: var(--leaf-opacity, 0.18);
   pointer-events: none;
   z-index: -1;
-  animation: leaf-drift 20s infinite linear;
+  animation: leaf-drift 25s infinite linear;
 }
 
 /* --- LAYOUT UTILITIES --- */
@@ -1165,10 +1165,10 @@ footer {
     opacity: 0;
   }
   10% {
-    opacity: 0.05;
+    opacity: var(--leaf-opacity, 0.18);
   }
   90% {
-    opacity: 0.05;
+    opacity: var(--leaf-opacity, 0.18);
   }
   100% {
     transform: translate(150px, 100vh) rotate(360deg);
