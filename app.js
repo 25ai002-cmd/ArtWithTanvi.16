@@ -265,9 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  }
-
    // --- 9. PROFESSIONAL EMAIL INQUIRY PROCESS (BREVO API INTEGRATION) ---
   const emailForm = document.getElementById('email-inquiry-form');
   const submitBtn = document.getElementById('contact-submit-btn');
