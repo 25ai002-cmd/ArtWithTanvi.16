@@ -695,23 +695,60 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- 11. INSTAGRAM BIO LINK AUTO-SCROLL TO GALLERY ---
-  const isFromInstagram = (document.referrer && document.referrer.includes('instagram.com')) || 
-                          window.location.search.includes('ref=ig') || 
-                          window.location.search.includes('source=instagram');
+  const referrer = (document.referrer || '').toLowerCase();
+  const userAgent = (navigator.userAgent || '').toLowerCase();
+  const urlParams = new URLSearchParams(window.location.search);
+  const hash = window.location.hash;
+  
+  const isFromInstagram = referrer.includes('instagram') || 
+                          referrer.includes('com.instagram.android') ||
+                          userAgent.includes('instagram') ||
+                          urlParams.has('ref') && urlParams.get('ref').toLowerCase() === 'ig' ||
+                          urlParams.has('source') && urlParams.get('source').toLowerCase() === 'instagram' ||
+                          urlParams.has('source') && urlParams.get('source').toLowerCase() === 'ig' ||
+                          urlParams.has('utm_source') && urlParams.get('utm_source').toLowerCase() === 'instagram' ||
+                          urlParams.has('ig') ||
+                          urlParams.has('igshid') ||
+                          hash === '#gallery';
                           
-  if (isFromInstagram) {
-    setTimeout(() => {
-      const gallerySection = document.getElementById('gallery');
-      if (gallerySection) {
-        gallerySection.scrollIntoView({ behavior: 'smooth' });
-        // Set active state on gallery navigation link
-        const galleryNavLink = document.querySelector('a[href="#gallery"]');
-        if (galleryNavLink) {
-          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-          galleryNavLink.classList.add('active');
-        }
+  function scrollToGallery(behavior = 'auto') {
+    const gallerySection = document.getElementById('gallery');
+    if (gallerySection) {
+      const header = document.getElementById('header');
+      const headerHeight = header ? header.offsetHeight : 80;
+      const offsetTop = gallerySection.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: offsetTop,
+        behavior: behavior
+      });
+
+      // Force reveal elements in the gallery section to be active/visible immediately
+      const revealElements = gallerySection.querySelectorAll('.reveal');
+      revealElements.forEach(el => el.classList.add('active'));
+
+      // Set active state on gallery navigation link
+      const galleryNavLink = document.querySelector('a[href="#gallery"]');
+      if (galleryNavLink) {
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        galleryNavLink.classList.add('active');
       }
-    }, 1200); // Stagger slightly to allow scroll reveal animations to load
+    }
+  }
+
+  if (isFromInstagram) {
+    // Attempt instant scroll immediately on DOMContentLoaded
+    scrollToGallery('auto');
+    
+    // Also schedule after a tiny delay to ensure layout is fully calculated
+    setTimeout(() => {
+      scrollToGallery('auto');
+    }, 100);
+
+    // Final correction on window load (when all images are loaded)
+    window.addEventListener('load', () => {
+      scrollToGallery('auto');
+    });
   }
 
   // Initialize UI
