@@ -683,4 +683,164 @@ Please let me know how we can proceed!`;
       });
     });
   }
+
+  // --- 10. SHOPPING CART SYSTEM ---
+  let cart = [];
+  try {
+    cart = JSON.parse(localStorage.getItem('dreamystrokes_cart')) || [];
+  } catch (e) {
+    cart = [];
+  }
+
+  const cartToggle = document.getElementById('cart-toggle');
+  const cartClose = document.getElementById('cart-close');
+  const cartDrawer = document.getElementById('cart-drawer');
+  const cartOverlay = document.getElementById('cart-overlay');
+  const cartCountBadge = document.getElementById('cart-count');
+  const cartDrawerBody = document.getElementById('cart-drawer-body');
+  const cartSubtotalEl = document.getElementById('cart-subtotal');
+  const checkoutIgBtn = document.getElementById('checkout-ig-btn');
+  const checkoutEmailBtn = document.getElementById('checkout-email-btn');
+
+  // Toggle Cart Drawer
+  if (cartToggle && cartDrawer && cartOverlay) {
+    cartToggle.addEventListener('click', () => {
+      cartDrawer.classList.add('active');
+      cartOverlay.classList.add('active');
+    });
+  }
+
+  if (cartClose && cartOverlay && cartDrawer) {
+    const closeCart = () => {
+      cartDrawer.classList.remove('active');
+      cartOverlay.classList.remove('active');
+    };
+    cartClose.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+  }
+
+  // Add Item to Cart
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+  addToCartButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent modal popup trigger
+      const id = btn.getAttribute('data-id');
+      const title = btn.getAttribute('data-title');
+      const price = parseFloat(btn.getAttribute('data-price'));
+      const img = btn.getAttribute('data-img');
+
+      const existingItem = cart.find(item => item.id === id);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ id, title, price, img, quantity: 1 });
+      }
+
+      updateCartUI();
+      
+      // Open drawer for visual feedback
+      if (cartDrawer && cartOverlay) {
+        cartDrawer.classList.add('active');
+        cartOverlay.classList.add('active');
+      }
+    });
+  });
+
+  // Update Cart UI function
+  function updateCartUI() {
+    localStorage.setItem('dreamystrokes_cart', JSON.stringify(cart));
+    
+    // Update Badge count
+    const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    if (cartCountBadge) {
+      cartCountBadge.textContent = totalCount;
+    }
+
+    // Render Items
+    if (!cartDrawerBody) return;
+    
+    if (cart.length === 0) {
+      cartDrawerBody.innerHTML = '<div class="cart-empty-msg">Your cart is empty. Add some beautiful strokes!</div>';
+      if (cartSubtotalEl) cartSubtotalEl.textContent = '₹0';
+      return;
+    }
+
+    let cartHtml = '';
+    let subtotal = 0;
+
+    cart.forEach(item => {
+      const itemSubtotal = item.price * item.quantity;
+      subtotal += itemSubtotal;
+      
+      cartHtml += `
+        <div class="cart-item">
+          <img src="${item.img}" alt="${item.title}" class="cart-img-fluid cart-item-img">
+          <div class="cart-item-info">
+            <h4 class="cart-item-title">${item.title}</h4>
+            <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')} x ${item.quantity}</div>
+          </div>
+          <button class="cart-item-remove" data-id="${item.id}" aria-label="Remove item">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      `;
+    });
+
+    cartDrawerBody.innerHTML = cartHtml;
+    if (cartSubtotalEl) {
+      cartSubtotalEl.textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+    }
+
+    // Bind remove buttons
+    const removeButtons = cartDrawerBody.querySelectorAll('.cart-item-remove');
+    removeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+        cart = cart.filter(item => item.id !== id);
+        updateCartUI();
+      });
+    });
+  }
+
+  // Cart Checkout Templates
+  function buildCartMessage() {
+    let msg = `Hi Tanvi! I would like to order the following art pieces from your portfolio website:\n\n`;
+    let subtotal = 0;
+    cart.forEach(item => {
+      msg += `- ${item.quantity}x ${item.title} (₹${item.price.toLocaleString('en-IN')} each)\n`;
+      subtotal += item.price * item.quantity;
+    });
+    msg += `\nTotal: ₹${subtotal.toLocaleString('en-IN')} INR\n\nPlease let me know how to complete my order! Thank you.`;
+    return msg;
+  }
+
+  // Checkout via Instagram
+  if (checkoutIgBtn) {
+    checkoutIgBtn.addEventListener('click', () => {
+      if (cart.length === 0) return;
+      const msg = buildCartMessage();
+      navigator.clipboard.writeText(msg).then(() => {
+        alert('Order message copied to clipboard! Redirecting you to Instagram DM...');
+        window.open('https://www.instagram.com/artwithtanvi_.16/', '_blank');
+      }).catch(err => {
+        window.open('https://www.instagram.com/artwithtanvi_.16/', '_blank');
+      });
+    });
+  }
+
+  // Checkout via Email (Gmail compose redirect)
+  if (checkoutEmailBtn) {
+    checkoutEmailBtn.addEventListener('click', () => {
+      if (cart.length === 0) return;
+      const msg = buildCartMessage();
+      const subjectText = `Art Order Request - ${cart.length} items`;
+      
+      // Gmail Compose URL
+      const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=25ai056@sxca.edu.in&su=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(msg)}`;
+      window.open(gmailComposeUrl, '_blank');
+    });
+  }
+
+  // Initialize UI
+  updateCartUI();
 });

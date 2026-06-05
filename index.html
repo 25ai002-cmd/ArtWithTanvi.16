@@ -65,11 +65,18 @@
         </ul>
       </nav>
       
-      <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <button class="cart-toggle-btn" id="cart-toggle" aria-label="View Shopping Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+        
+        <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -190,9 +197,14 @@
           <div class="gallery-info">
             <h3 class="gallery-title">Nebula Forest River</h3>
             <p class="gallery-desc">Acrylic on canvas sheet. Vibrant constellations reflecting over organic spruce forests and calm water.</p>
-            <div class="gallery-footer">
-              <span class="gallery-price-tag">₹7,900 INR</span>
-              <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+            <div class="gallery-footer" style="flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+                <span class="gallery-price-tag">₹7,900 INR</span>
+                <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+              </div>
+              <button class="btn btn-primary add-to-cart-btn" data-id="nebula-river" data-title="Nebula Forest River" data-price="7900" data-img="assets/canvas_dreamy.png" style="width: 100%; padding: 0.6rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; margin-top: 0.5rem; justify-content: center; gap: 0.5rem;">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
             </div>
           </div>
         </div>
@@ -206,9 +218,14 @@
           <div class="gallery-info">
             <h3 class="gallery-title">Botanical Study</h3>
             <p class="gallery-desc">Graphite on textured off-white artist sheet. Detailed shading capturing natural wildflower nodes.</p>
-            <div class="gallery-footer">
-              <span class="gallery-price-tag">₹3,750 INR</span>
-              <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+            <div class="gallery-footer" style="flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+                <span class="gallery-price-tag">₹3,750 INR</span>
+                <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+              </div>
+              <button class="btn btn-primary add-to-cart-btn" data-id="botanical-study" data-title="Botanical Study" data-price="3750" data-img="assets/sketch_botanical.png" style="width: 100%; padding: 0.6rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; margin-top: 0.5rem; justify-content: center; gap: 0.5rem;">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
             </div>
           </div>
         </div>
@@ -227,9 +244,14 @@
           <div class="gallery-info">
             <h3 class="gallery-title">Oak Framed Forest</h3>
             <p class="gallery-desc">Ready-to-hang natural wood frame enclosing the Enchanted Forest landscape. Outfitted with premium acrylic glass protection.</p>
-            <div class="gallery-footer">
-              <span class="gallery-price-tag">₹9,900 INR</span>
-              <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+            <div class="gallery-footer" style="flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+                <span class="gallery-price-tag">₹9,900 INR</span>
+                <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+              </div>
+              <button class="btn btn-primary add-to-cart-btn" data-id="oak-framed-forest" data-title="Oak Framed Forest" data-price="9900" data-img="assets/20260604_180251.jpg" style="width: 100%; padding: 0.6rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; margin-top: 0.5rem; justify-content: center; gap: 0.5rem;">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
             </div>
           </div>
         </div>
@@ -243,9 +265,14 @@
           <div class="gallery-info">
             <h3 class="gallery-title">Starry Horizon</h3>
             <p class="gallery-desc">Mixed media canvas. Shimmering stellar clouds blending over deep cosmic violet gradients and mountain peaks.</p>
-            <div class="gallery-footer">
-              <span class="gallery-price-tag">₹6,800 INR</span>
-              <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+            <div class="gallery-footer" style="flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+                <span class="gallery-price-tag">₹6,800 INR</span>
+                <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+              </div>
+              <button class="btn btn-primary add-to-cart-btn" data-id="starry-horizon" data-title="Starry Horizon" data-price="6800" data-img="assets/20260604_180239.jpg" style="width: 100%; padding: 0.6rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; margin-top: 0.5rem; justify-content: center; gap: 0.5rem;">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
             </div>
           </div>
         </div>
@@ -259,9 +286,14 @@
           <div class="gallery-info">
             <h3 class="gallery-title">Mandala Symphony</h3>
             <p class="gallery-desc">Fineliner ink on premium artist drawing board. Highly symmetrical geometry inspired by natural micro-patterns.</p>
-            <div class="gallery-footer">
-              <span class="gallery-price-tag">₹4,200 INR</span>
-              <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+            <div class="gallery-footer" style="flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+                <span class="gallery-price-tag">₹4,200 INR</span>
+                <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+              </div>
+              <button class="btn btn-primary add-to-cart-btn" data-id="mandala-symphony" data-title="Mandala Symphony" data-price="4200" data-img="assets/20260604_175927.jpg" style="width: 100%; padding: 0.6rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; margin-top: 0.5rem; justify-content: center; gap: 0.5rem;">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
             </div>
           </div>
         </div>
@@ -280,12 +312,36 @@
           <div class="gallery-info">
             <h3 class="gallery-title">Gold Framed Moon</h3>
             <p class="gallery-desc">Luxury gold leaf lining frame enclosing the Moonlit Dream illustration. Complete with rear mounting hangers.</p>
-            <div class="gallery-footer">
-              <span class="gallery-price-tag">₹5,800 INR</span>
-              <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+            <div class="gallery-footer" style="flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+                <span class="gallery-price-tag">₹5,800 INR</span>
+                <span class="gallery-view-action">Details <i class="fas fa-expand"></i></span>
+              </div>
+              <button class="btn btn-primary add-to-cart-btn" data-id="gold-framed-moon" data-title="Gold Framed Moon" data-price="5800" data-img="assets/20260604_180208.jpg" style="width: 100%; padding: 0.6rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; margin-top: 0.5rem; justify-content: center; gap: 0.5rem;">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM COMMISSION INFORMATION BANNER -->
+  <section id="custom-commission-banner" class="custom-banner">
+    <div class="container reveal">
+      <span class="section-tag">Personalized Art</span>
+      <h2 class="section-title" style="margin-bottom: 1.5rem;">Looking for Customized Art?</h2>
+      <p style="max-width: 680px; margin: 0 auto 2.5rem auto; font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary);">
+        If you want a customized scenic painting, a personal portrait sketch, or custom-framed home décor, let's make it real! Commissions are open. Contact me directly on Instagram or send an email request.
+      </p>
+      <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/artwithtanvi_.16/" target="_blank" class="btn btn-primary">
+          <i class="fab fa-instagram"></i> Message on Instagram
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="far fa-envelope"></i> Open Email Inquiry Form
+        </a>
       </div>
     </div>
   </section>
@@ -776,6 +832,26 @@
       </div>
     </div>
   </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+       <h3 class="cart-drawer-title">Shopping Cart</h3>
+       <button class="cart-close-btn" id="cart-close" aria-label="Close Shopping Cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body" id="cart-drawer-body">
+       <div class="cart-empty-msg">Your cart is empty. Add some beautiful strokes!</div>
+    </div>
+    <div class="cart-drawer-footer">
+       <div class="cart-subtotal-row">
+         <span>Subtotal:</span>
+         <span class="cart-subtotal-val" id="cart-subtotal">₹0</span>
+       </div>
+       <button class="btn btn-primary cart-checkout-btn" id="checkout-ig-btn" style="border-radius: var(--radius-lg);"><i class="fab fa-instagram"></i> Checkout via Instagram DM</button>
+       <button class="btn btn-secondary cart-checkout-btn" id="checkout-email-btn" style="border-radius: var(--radius-lg);"><i class="far fa-envelope"></i> Checkout via Email</button>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="config.js"></script>
